@@ -1,0 +1,64 @@
+.fight>.container>h1 {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.fight>.container>.fight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fight>.container>.fight>.content-fight {
+  width: 70rem;
+  height: 50rem;
+  padding: 1rem;
+  background-color: black;
+}
+
+
+.fight>.container>.fight>.content-fight>img{
+  display: block;
+  margin: 0 auto;
+}
+
+.fight>.container>.fight>.content-fight>button {
+  margin-top: 2rem;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.fight>.container>.fight>.fights {
+  width: 85rem;
+}
+
+.fight>.container>.fight>.fights>.characters-fight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.fight>.container>.fight>.fights>.characters-fight>.character>img {
+  width: 25rem;
+}
+
+.fight>.container>.fight>.fights>.characters-fight>.character>h4{
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.fight>.container>.fight>.fights>.characters-fight>.character>button,
+.fight>.container>.fight>.fights>.characters-fight>.center-content>button{
+  width: 8rem;
+  height: 3rem;
+  border: 0;
+  cursor: pointer;
+}

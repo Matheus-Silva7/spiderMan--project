@@ -1,0 +1,79 @@
+.choose-spider {
+  background-image: url(../img/city-background.png);
+  background-attachment: fixed;
+  background-size: cover;
+  height:100%;
+}
+
+main>.choose-spider>.container>.logo-spider {
+  width: 100%;
+  text-align: center;
+}
+
+main>.choose-spider>.container>.logo-spider>img {
+  width: 40rem;
+}
+ 
+main>.choose-spider>.container>.spider-characters {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+} 
+
+main>.choose-spider>.container>hr{
+  width: 40%;
+  margin-bottom: 1rem;
+  border: 1px solid white;
+}
+
+main>.choose-spider>.container>.spider-characters>.characters-list {
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+main>.choose-spider>.container>.spider-characters>.characters-list>.character {
+ padding: 1rem 1rem 0 1rem;
+ height: 12rem;
+  background-color: rgba(0, 0, 0, 0.705);
+}
+
+main>.choose-spider>.container>.spider-characters>.characters-list>.character>img{
+  width: 10rem;
+}
+
+main>.choose-spider>.container>.spider-characters>.characters-list>.character:hover {
+  cursor: pointer;
+  background-color: #999999b9;
+}
+
+main>.choose-spider>.container>.spider-characters>.description-spider {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main>.choose-spider>.container>.spider-characters>.description-spider>.text-description{
+  background-color: #999999b9;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+main>.choose-spider>.container>.spider-characters>.description-spider>img {
+  width: 21rem;
+}
+
+main>.choose-spider>.container>.spider-characters>.description-spider>.text-description>h2 {
+  text-align: center;
+}
+
+main>.choose-spider>.container>.spider-characters>.description-spider>.text-description>p{
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
