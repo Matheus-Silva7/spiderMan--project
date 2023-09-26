@@ -41,6 +41,10 @@ main>.choose-spider>.container>.spider-characters>.characters-list>.character {
   background-color: rgba(0, 0, 0, 0.705);
 }
 
+main>.choose-spider>.container>.spider-characters>.characters-list>.active{
+  background-color: #999999b9;
+}
+
 main>.choose-spider>.container>.spider-characters>.characters-list>.character>img{
   width: 10rem;
 }
