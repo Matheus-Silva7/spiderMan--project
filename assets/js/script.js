@@ -3,11 +3,12 @@ const DivCharactersList = document.querySelector('.characters-list')
 const DivDescriptionSpider = document.querySelector('.description-spider')
 const DivContentFight = document.querySelector('.content-fight')
 const btnDraw = document.querySelector('.btn-draw')
+const btnAgain = document.querySelector('.again')
 
 //lista com as imagens dos personagens,nomes e descrição
 const listCharacter = [
   {
-    id: 1,
+    id: "miles-morales",
     name: "Miles Morales",
     imgProfile: "assets/img/miles-profile.png",
     imgPose: "assets/img/miles-pose.png",
@@ -21,7 +22,7 @@ const listCharacter = [
     description: "Também conhecida como Gwen Stacy, ela é a Mulher-Aranha de uma dimensão alternativa onde Peter Parker se tornou o Lagarto. Gwen é uma talentosa musicista e lutadora, além de possuir habilidades de aranha."
   },
   {
-    id: "miguel-ohara",
+    id: "spider-2099",
     name: "Spider 2099",
     imgProfile: "assets/img/miguel-profile.png",
     imgPose: "assets/img/miguel-pose.png",
@@ -114,7 +115,6 @@ listCharacter.forEach(Element => {
     <hr>
     <p>${Element.description}</p>
     </div> `
-
   })
 })
 
@@ -133,7 +133,7 @@ btnDraw.addEventListener('click', function gerar() {
   DivContentFight.classList.add("fights")
   DivContentFight.innerHTML = `
   <div class = "characters-fight">
-    <div class ="character">
+    <div class ="character-1">
     <img src="${listCharacter[drawNumber1].imgPose}" alt="">
     <h4>${listCharacter[drawNumber1].name}</h4>
     <button id="btn-bet1"> Apostar </button>
@@ -142,14 +142,13 @@ btnDraw.addEventListener('click', function gerar() {
     <img src="assets/img/versus.png" alt="">
     
     </div>
-    <div class ="character">
+    <div class ="character-2">
     <img src="${listCharacter[drawNumber2].imgPose}" alt="">
     <h4>${listCharacter[drawNumber2].name}</h4>
     <button id="btn-bet2"> Apostar </button>
     </div>
   <div>
   `
-
   //gerando atributos randomicos
   const randomStrength1 = Math.trunc(Math.random() * 300) + 10
   const randomDefense1 = Math.trunc(Math.random() * 300) + 10
@@ -159,52 +158,109 @@ btnDraw.addEventListener('click', function gerar() {
   const randomDefense2 = Math.trunc(Math.random() * 300) + 10
   const randomAgility2 = Math.trunc(Math.random() * 300) + 10
 
-  console.log(`
-  character 1:
-  strenght: ${randomStrength1}
-  defense: ${randomDefense1}
-  agility: ${randomAgility1}
-  `)
-
-  console.log(`
-  character 2:
-  strenght: ${randomStrength2}
-  defense: ${randomDefense2}
-  agility: ${randomAgility2}
-  `)
-
   const btnbet1 = document.getElementById('btn-bet1');
   const btnbet2 = document.getElementById('btn-bet2');
   let bet = ""
   let win = ""
+  let result = ""
 
-  if (btnbet1 && btnbet2) {
-    btnbet1.addEventListener('click', randomAtributes());
-    btnbet2.addEventListener('click', randomAtributes());
-  }
-  
+  btnbet1.addEventListener('click', () => {
+    bet = "ch1"
+    if (randomStrength1 > randomStrength2 && randomDefense1 > randomDefense2 && randomAgility1 < randomAgility2) {
+      win = "ch1"
+      console.log("Character 1 venceu")
+    } else if (randomStrength1 < randomStrength2 && randomDefense1 > randomDefense2 && randomAgility1 > randomAgility2) {
+      win = "ch1"
+      console.log("Character 1 venceu")
+    } else if (randomStrength1 > randomStrength2 && randomDefense1 < randomDefense2 && randomAgility1 > randomAgility2) {
+      win = "ch1"
+      console.log("Character 1 venceu")
+    } else if (randomStrength1 === randomStrength2 && randomDefense1 === randomDefense2 && randomAgility1 === randomAgility2) {
+      win = "em"
+    }
+    else {
+      win = "ch2"
+      console.log("Character 2 venceu")
+    }
+    console.log(bet, win)
+    if (bet === win) {
+      console.log("você ganhou")
+      result = "Você ganhou!"
+    } else {
+      console.log("você perdeu")
+      result = "Você perdeu!"
+    }
+    DivContentFight.innerHTML = `
+    <div class = "characters-fight">
+        <div class ="character-1">
+        <img src="${listCharacter[drawNumber1].imgPose}" alt="">
+        <h4>${listCharacter[drawNumber1].name}</h4>
+        <p>Força: ${randomStrength1}</p>
+        <p>Agilidade: ${randomAgility1}</p>
+        <p>Defesa: ${randomDefense1}</p>
+        </div>
+    <div class ="center-content">
+      <h2>${result}</h2>
+      <img src="assets/img/versus.png" alt="">
+    </div>
+       <div class ="character-2">
+        <img src="${listCharacter[drawNumber2].imgPose}" alt="">
+        <h4>${listCharacter[drawNumber2].name}</h4>
+        <p>Força: ${randomStrength2}</p>
+        <p>Agilidade: ${randomAgility2}</p>
+        <p>Defesa: ${randomDefense2}</p>
+    </div>
+  <div>
+    `
+  });
 
-  if (randomStrength1 > randomStrength2 && randomDefense1 > randomDefense2 && randomAgility1 < randomAgility2) {
-    win = "ch1"
-    console.log("Character 1 venceu")
-  } else if (randomStrength1 < randomStrength2 && randomDefense1 > randomDefense2 && randomAgility1 > randomAgility2) {
-    win = "ch1"
-    console.log("Character 1 venceu")
-  } else if (randomStrength1 > randomStrength2 && randomDefense1 < randomDefense2 && randomAgility1 > randomAgility2) {
-    win = "ch1"
-    console.log("Character 1 venceu")
-  } else if (randomStrength1 === randomStrength2 && randomDefense1 === randomDefense2 && randomAgility1 === randomAgility2) {
-    win = "em"
-  }
-  else {
-    win = "ch2"
-    console.log("Character 2 venceu")
-  }
-  console.log(bet, win)
-  if(bet === win){
-    console.log("você ganhou")
-  } else{
-    console.log("você perdeu")
-  }
-  
+  btnbet2.addEventListener('click', () => {
+    bet = "ch2"
+    if (randomStrength1 > randomStrength2 && randomDefense1 > randomDefense2 && randomAgility1 < randomAgility2) {
+      win = "ch1"
+      console.log("Character 1 venceu")
+    } else if (randomStrength1 < randomStrength2 && randomDefense1 > randomDefense2 && randomAgility1 > randomAgility2) {
+      win = "ch1"
+      console.log("Character 1 venceu")
+    } else if (randomStrength1 > randomStrength2 && randomDefense1 < randomDefense2 && randomAgility1 > randomAgility2) {
+      win = "ch1"
+      console.log("Character 1 venceu")
+    } else if (randomStrength1 === randomStrength2 && randomDefense1 === randomDefense2 && randomAgility1 === randomAgility2) {
+      win = "em"
+    }
+    else {
+      win = "ch2"
+      console.log("Character 2 venceu")
+    }
+    console.log(bet, win)
+    if (bet === win) {
+      console.log("você ganhou")
+      result = "Você ganhou!"
+    } else {
+      console.log("você perdeu")
+      result = "Você perdeu!"
+    }
+    DivContentFight.innerHTML = `
+    <div class = "characters-fight">
+        <div class ="character-1">
+        <img src="${listCharacter[drawNumber1].imgPose}" alt="">
+        <h4>${listCharacter[drawNumber1].name}</h4>
+        <p>Força: ${randomStrength1}</p>
+        <p>Agilidade: ${randomAgility1}</p>
+        <p>Defesa: ${randomDefense1}</p>
+        </div>
+    <div class ="center-content">
+      <h2>${result}</h2>
+      <img src="assets/img/versus.png" alt="">
+    </div>
+       <div class ="character-2">
+        <img src="${listCharacter[drawNumber2].imgPose}" alt="">
+        <h4>${listCharacter[drawNumber2].name}</h4>
+        <p>Força: ${randomStrength2}</p>
+        <p>Agilidade: ${randomAgility2}</p>
+        <p>Defesa: ${randomDefense2}</p>
+    </div>
+  <div>
+    ` 
+  });
 })

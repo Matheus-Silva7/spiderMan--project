@@ -5,60 +5,74 @@
   padding: 3rem 0;
 }
 
-.fight>.container>.fight {
+.fight>.container>.fight-div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.fight>.container>.fight>.content-fight {
+.fight>.container>.fight-div>.content-fight {
   width: 70rem;
-  height: 50rem;
+  height: 47rem;
   padding: 1rem;
   background-color: black;
 }
 
 
-.fight>.container>.fight>.content-fight>img{
+.fight>.container>.fight-div>.content-fight>img{
   display: block;
   margin: 0 auto;
 }
 
-.fight>.container>.fight>.content-fight>button {
+.fight>.container>.fight-div>button {
   margin-top: 2rem;
   width: 10rem;
   height: 3rem;
   cursor: pointer;
 }
 
-.fight>.container>.fight>.fights {
+.fight>.container>.fight-div>.fights {
   width: 85rem;
 }
 
-.fight>.container>.fight>.fights>.characters-fight {
+.fight>.container>.fight-div>.fights>.characters-fight {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
   padding: 3rem;
 }
 
-.fight>.container>.fight>.fights>.characters-fight>.character>img {
-  width: 25rem;
+.fight>.container>.fight-div>.fights>.characters-fight>.character-1>img,
+.fight>.container>.fight-div>.fights>.characters-fight>.character-2>img  {
+  width: 22rem;
 }
 
-.fight>.container>.fight>.fights>.characters-fight>.character>h4{
+.fight>.container>.fight-div>.fights>.characters-fight>.character-1>h4,
+.fight>.container>.fight-div>.fights>.characters-fight>.character-2>h4{
   color: white;
   font-size: 3rem;
   text-align: center;
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 
-.fight>.container>.fight>.fights>.characters-fight>.character>button,
-.fight>.container>.fight>.fights>.characters-fight>.center-content>button{
+.fight>.container>.fight-div>.fights>.characters-fight>.character-1>p,
+.fight>.container>.fight-div>.fights>.characters-fight>.character-2>p{
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.fight>.container>.fight-div>.fights>.characters-fight>.character-1>button,
+.fight>.container>.fight-div>.fights>.characters-fight>.character-2>button,
+.fight>.container>.fight-div>.fights>.characters-fight>.center-content>button{
   width: 8rem;
   height: 3rem;
   border: 0;
   cursor: pointer;
+}
+
+.fight>.container>.fight-div>.fights>.characters-fight>.center-content>h2{
+  text-align: center;
 }
