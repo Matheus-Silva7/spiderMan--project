@@ -106,7 +106,7 @@ listCharacter.forEach(Element => {
   DivCharactersList.appendChild(character)
 
   //evento ao clicar aparecer nome, a imagem e descrição corrensponte aquele character
-  character.addEventListener('click', () => {
+  character.addEventListener('mouseover', () => {
 
     DivDescriptionSpider.innerHTML = `
     <img src="${Element.imgPose}" alt="">
